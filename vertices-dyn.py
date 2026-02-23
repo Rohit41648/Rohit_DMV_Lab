@@ -1,17 +1,18 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-n = int(input("Enter number of vertices (greater than 3): "))
+n = int(input("Enter the number of vertices: "))
 
-if n <= 3:
-    print("Number of vertices must be greater than 3.")
-else:
-    G = nx.complete_graph(n)
-
-    pos = nx.circular_layout(G)   
-    nx.draw(G, pos, with_labels=True, node_color='skyblue',
-            node_size=800, font_size=10)
-
-    plt.title(f"Complete Graph with {n} Vertices")
-
+if n > 3:
+    G = nx.complete_graph(n)   # Create the complete graph
+    
+    nx.draw(
+        G,
+        node_color='green',
+        node_size=1500,
+        with_labels=True
+    )
+    
     plt.show()
+else:
+    print("Minimum number of vertices should be more than 3")
